@@ -17,11 +17,11 @@ export default function Page(){
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Dev
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="#">Action1</a></li>
-              <li><a className="dropdown-item" href="#">Action2</a></li>
+              <li><a className="dropdown-item" href="/task_card">taskCard</a></li>
+              <li><a className="dropdown-item" href="/task_card_flex">taskCardFlex</a></li>
             </ul>
           </li>           
           <li className="nav-item">
