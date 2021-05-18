@@ -76,9 +76,11 @@ console.log(this.state.data )
           </div>          
         </div>
         <hr className="mt-2 mb-2" />
-        <ul>
-        {this.tabRow()}
-        </ul>
+        <table className="table table-striped table-hover">
+          <tbody>
+          {this.tabRow()}
+          </tbody>
+        </table>
       </div>
     </Layout>
     )

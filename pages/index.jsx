@@ -12,9 +12,7 @@ export default function Index(data) {
         <h1 className="my-4">Home</h1>
         <p>This is home page.</p>
         <hr className="my-2" />
-        <button className="btn btn-primary">button-blue</button>
-        <hr className="my-2" />
-        <div className="icon_wrap text-green-700">
+        <div className="icon_wrap">
           <i className="bi bi-alarm mx-2"></i>
           <i className="bi bi-calendar mx-2"></i>
           <i className="bi bi-house-fill mx-2"></i>
@@ -23,7 +21,7 @@ export default function Index(data) {
       </div>
     </Layout>
     <style>{`
-    .icon_wrap{ font-size: 2rem; }
+    .icon_wrap{ font-size: 2rem; color: green; }
     `}</style>     
   </div>
   )

@@ -3,7 +3,7 @@ import Head from 'next/head';
 //
 export default function Page(){
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-md navbar-dark bg-success" >
     <div className="container-fluid">
       <a className="navbar-brand" href="/">App123</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -15,13 +15,23 @@ export default function Page(){
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="#">Action1</a></li>
+              <li><a className="dropdown-item" href="#">Action2</a></li>
+            </ul>
+          </li>           
           <li className="nav-item">
             <a className="nav-link" href="/tasks">Tasks</a>
           </li>
         </ul>
         <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link" href="/about">About</a>
+            <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#NavigateAboutModal">About
+            </a>            
           </li>          
         </ul>
       </div>

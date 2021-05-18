@@ -1,14 +1,19 @@
 import Link from 'next/link';
 //
 const IndexRow = props => (
-  <li>
+  <tr>
+    <td><span className="mr-2">ID: {props.id}</span>
+    </td>
+    <td>
     <Link href={`/tasks/${props.id}`}>
       <a><h3>{props.title}</h3></a>
     </Link>
+    </td>
+    <td>
     <Link href={`/tasks/edit/${props.id}`}>
-      <a>[ edit ]</a>
+      <a className="btn btn-outline-primary">Edit</a>
     </Link>    
-    &nbsp;<span className="mr-2">ID: {props.id}</span> 
-  </li>
+    </td>
+  </tr>
 );
 export default IndexRow;
