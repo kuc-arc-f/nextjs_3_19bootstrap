@@ -1,6 +1,6 @@
 ﻿# nextjs_3_19bootstrap
 
- Version: 0.9.1
+ Version: 0.9.2
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
