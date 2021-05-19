@@ -29,6 +29,9 @@ export default function Page(){
           <li className="nav-item">
             <a className="nav-link active" href="/tasks">Tasks</a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link active" href="/books">Books</a>
+          </li>
         </ul>
         <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
