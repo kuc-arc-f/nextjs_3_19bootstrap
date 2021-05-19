@@ -1,4 +1,4 @@
-import Layout from '../components/layout_bootstrap'
+import Layout from '../components/layout'
 //
 export default function Page() {
   return (

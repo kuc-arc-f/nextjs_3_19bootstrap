@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Dexie from 'dexie';
 import React from 'react';
 
-import Layout from '../../components/layout_bootstrap'
+import Layout from '../../components/layout'
 import LibTask from '../../lib/LibTask';
 import LibDexie from '../../lib/LibDexie';
 import IndexRow from './IndexRow';
@@ -45,6 +45,11 @@ console.log(this.state.data )
         <hr className="mt-2 mb-2" />
         {this.tabRow()}
       </div>
+      <style>{`
+      .card_col_body{ text-align: left; width: 100%;}
+      .card_col_icon{ font-size: 2rem; }
+      .task_card_box{ width : 75%;}
+      `}</style>    
     </Layout>
     )
   }

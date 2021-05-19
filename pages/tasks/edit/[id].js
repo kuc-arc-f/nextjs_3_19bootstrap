@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link';
 import Router from 'next/router'
 import React from 'react'
 import Dexie from 'dexie';
+import flash from 'next-flash';
 
 import LibTask from '../../../lib/LibTask';
-import Layout from '../../../components/layout_bootstrap'
+import Layout from '../../../components/layout'
 //
 export default class extends React.Component {
   constructor(props){
@@ -51,6 +53,7 @@ console.log(ctx.query.id)
     console.log("#deete-id:" , this.id)
     try {
       await this.db.tasks.delete(parseInt(this.id) );
+      flash.set({ messages_success: 'Success , delete item' })
       Router.push('/tasks');
 //console.log(item)
     } catch (error) {
@@ -68,6 +71,7 @@ console.log(ctx.query.id)
         title: this.state.title,
         content: this.state.content,
       });
+      flash.set({ messages_success: 'Success , save' })
       Router.push('/tasks');      
 //console.log(item)
     } catch (error) {
@@ -76,44 +80,41 @@ console.log(ctx.query.id)
   }  
   render() {
     return (
-      <Layout>
-          <div className="container">
-            <hr className="mt-2 mb-2" />
+    <Layout>
+      <div className="container">
+        <Link href="/tasks">
+          <a className="btn btn-outline-primary mt-2">Back</a>
+        </Link>
+        <div className="card w-75 shadow-sm my-2">
+          <div className="card-body">
             <h1>Tasks - Edit</h1>
-            <div className="row">
-              <div className="col-md-6">
-                  <div className="form-group">
-                      <label>Title:</label>
-                      <input type="text" id="title" className="form-control"
-                      value={this.state.title}
-                      onChange={this.handleChangeTitle.bind(this)} />
-                  </div>
-              </div>
+            <div className="form-group mb-2">
+              <label>Title:</label>
+              <input type="text" id="title" className="form-control"
+              value={this.state.title}
+              onChange={this.handleChangeTitle.bind(this)} />
             </div>
-            <div className="row">
-              <div className="col-md-6">
-              <div className="form-group">
-                  <label>Content:</label>
-                  <input type="text" className="form-control"
-                    value={this.state.content}
-                    onChange={this.handleChangeContent.bind(this)}/>
-              </div>
-              </div>
-            </div><br />
+            <div className="form-group mb-2">
+              <label>Content:</label>
+              <input type="text" className="form-control"
+                value={this.state.content}
+                onChange={this.handleChangeContent.bind(this)}/>
+            </div>
             <div className="form-group">
               <button className="btn btn-primary" onClick={this.handleClick}>Save
               </button>
             </div>
-            <hr />                  
+            <hr />
             <div className="form-group">
               <button className="btn btn-danger" onClick={this.handleClickDelete}>Delete
               </button>
             </div>
-
-            <hr />
-            ID : {this.props.id}
           </div>
-      </Layout>
+        </div>             
+        <hr />
+        ID : {this.props.id}
+      </div>
+    </Layout>
     );
   };
 }

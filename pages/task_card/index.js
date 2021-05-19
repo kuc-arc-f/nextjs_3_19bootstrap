@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Dexie from 'dexie';
 import React from 'react';
 
-import Layout from '../../components/layout_bootstrap'
+import Layout from '../../components/layout'
 import LibTask from '../../lib/LibTask';
 import LibDexie from '../../lib/LibDexie';
 import IndexRow from './IndexRow';

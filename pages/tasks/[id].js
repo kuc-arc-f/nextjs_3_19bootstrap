@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import React from 'react'
+import Link from 'next/link';
 import Dexie from 'dexie';
 
 import LibTask from '../../lib/LibTask';
-import Layout from '../../components/layout_bootstrap'
+import Layout from '../../components/layout'
 //
 export default class extends React.Component {
   constructor(props){
@@ -29,6 +30,7 @@ console.log(this.id )
     try{
       const item = await this.db.tasks.get(id);
       this.setState({ 
+          id: this.props.id,
           title: item.title, 
           content: item.content
       });        
@@ -40,11 +42,22 @@ console.log(this.id )
   render() {
     return (
     <Layout>
-      <div className="container">
-        <div><h1>{this.state.title}</h1>
+      <div className="container p-4">
+        <Link href="/tasks">
+          <a className="btn btn-outline-primary mt-0">Back</a>
+        </Link>          
+        <div className="card shadow-sm my-2">
+          <div className="card-body">
+            <h1>{this.state.title}</h1>
+            ID : {this.props.id}            
+          </div>        
         </div>  
-        <div>Content: {this.state.content}
-        </div>              
+        <div className="card shadow-sm mb-2">
+          <div className="card-body">
+            Content:<br />
+            {this.state.content}
+          </div>        
+        </div>        
       </div>
     </Layout>
     )

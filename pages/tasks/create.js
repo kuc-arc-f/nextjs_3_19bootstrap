@@ -2,9 +2,10 @@ import Link from 'next/link';
 import Router from 'next/router'
 import React, {Component} from 'react';
 import Dexie from 'dexie';
-import LibTask from '../../lib/LibTask';
+import flash from 'next-flash';
 
-import Layout from '../../components/layout_bootstrap'
+import LibTask from '../../lib/LibTask';
+import Layout from '../../components/layout'
 //
 export default class extends Component {
   constructor(props){
@@ -36,6 +37,7 @@ export default class extends Component {
       }
 //      console.log(item)
       await this.db.tasks.add( item )
+      flash.set({ messages_success: 'Success , save' })
       Router.push('/tasks');
     } catch (error) {
       console.error(error);
@@ -45,31 +47,29 @@ export default class extends Component {
     return (
       <Layout>
         <div className="container">
-          <hr className="mt-2 mb-2" />
-          <h1>Tasks - Create</h1>
-          <div className="row">
-            <div className="col-md-6">
-                <div className="form-group">
-                    <label>Title:</label>
-                    <input type="text" className="form-control"
-                    onChange={this.handleChangeTitle.bind(this)} />
-                </div>
-            </div>
-          </div>
-          <div className="row">
-              <div className="col-md-6">
+          <Link href="/tasks">
+            <a className="btn btn-outline-primary mt-2">Back</a>
+          </Link>                   
+          <div className="card w-75 shadow-sm my-2">
+            <div className="card-body">
+              <h1>Tasks - Create</h1>
               <div className="form-group">
-                  <label>Content:</label>
-                  <input type="text" className="form-control"
-                    onChange={this.handleChangeContent.bind(this)}/>
+                <label>Title:</label>
+                <input type="text" className="form-control"
+                onChange={this.handleChangeTitle.bind(this)} />
               </div>
+              <div className="form-group">
+                <label>Content:</label>
+                <input type="text" className="form-control"
+                  onChange={this.handleChangeContent.bind(this)}/>
               </div>
-          </div><br />          
-          <div className="form-group">
-              <button className="btn btn-primary" onClick={this.handleClick}>Create
-              </button>
-          </div>                
-          <hr />
+              <div className="form-group mt-4">
+                <button className="btn btn-primary" onClick={this.handleClick}>Create
+                </button>
+              </div>                
+
+            </div>        
+          </div>
         </div>
       </Layout>
     )    

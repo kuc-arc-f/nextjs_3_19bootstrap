@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import Dexie from 'dexie';
 import LibTask from '../../lib/LibTask';
 
-import Layout from '../../components/layout_bootstrap'
+import Layout from '../../components/layout'
 //
 export default class extends Component {
   constructor(props){

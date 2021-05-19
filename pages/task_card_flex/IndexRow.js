@@ -2,7 +2,7 @@ import Link from 'next/link';
 //
 const IndexRow = props => (
   <div className="row justify-content-center">
-    <div className="task_card_box card shadow-lg mb-3">
+    <div className="task_card_box card shadow-lg mb-2">
       <div className="d-flex">
         <div className="card_col_icon py-4 ">
           <i className="bi bi-clipboard"></i>
@@ -17,11 +17,6 @@ const IndexRow = props => (
         </div>
       </div>
     </div>
-    <style>{`
-    .card_col_body{ text-align: left; width: 100%;}
-    .card_col_icon{ font-size: 2rem; }
-    .task_card_box{ width : 75%;}
-    `}</style>    
   </div>
 );
 export default IndexRow;

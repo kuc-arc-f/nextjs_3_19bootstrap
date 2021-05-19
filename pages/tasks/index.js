@@ -1,17 +1,25 @@
 import Link from 'next/link';
 import Dexie from 'dexie';
 import React from 'react';
+import flash from 'next-flash';
 
-import Layout from '../../components/layout_bootstrap'
+import Layout from '../../components/layout'
 import LibTask from '../../lib/LibTask';
 import LibDexie from '../../lib/LibDexie';
 import IndexRow from './IndexRow';
+import FlashBox from '../../components/FlashBox'
 //
 export default class Page extends React.Component {
+  static async getInitialProps(ctx) {
+    return { 
+      flash: flash.get(ctx) || {},
+    }
+  }
   constructor(props){
     super(props)
     this.state = {data: '', items_org: ''}
     this.handleClickExport = this.handleClickExport.bind(this);
+// console.log(props)
   }  
   async componentDidMount(){
     try{
@@ -19,10 +27,14 @@ export default class Page extends React.Component {
       this.db = new Dexie( config.DB_NAME );
       this.db.version(config.DB_VERSION).stores( config.DB_STORE );  
       var items = await this.db.tasks.toArray()
+      if(items.length < 1){
+        await LibTask.add_init_items(this.db )
+        items = await this.db.tasks.toArray()
+      }
       this.items_org = items
       items = LibDexie.get_reverse_items(items)
       this.setState({ data: items })
-//  console.log( items )
+//console.log( items.length )
     } catch (err) {
       alert(err)
       console.log(err);
@@ -30,7 +42,7 @@ export default class Page extends React.Component {
   }
   tabRow(){
     if(this.state.data instanceof Array){
-console.log(this.state.data )
+//console.log(this.state.data )
       return this.state.data.map((item, index) => {
         return (<IndexRow key={index}
                 id={item.id} title={item.title} />       
@@ -55,12 +67,14 @@ console.log(this.state.data )
   render() {
     return (
     <Layout>
-      <div className="container">
+      <FlashBox messages_success={this.props.flash.messages_success} 
+      messages_error={this.props.flash.messages_error} />      
+      <div className="container bg-white p-4">
         <h3>Tasks</h3>
         <div className="row">
           <div className="col-sm-6">
             <Link href="/tasks/create">
-              <a className="btn btn-sm btn-primary mt-0">New</a>
+              <a className="btn btn-primary mt-0">New</a>
             </Link>          
           </div>
           <div className="col-sm-6">
