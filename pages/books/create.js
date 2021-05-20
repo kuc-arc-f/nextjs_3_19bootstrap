@@ -118,8 +118,8 @@ console.log(item)
 // console.log(item )
       var name = "check_" + item.id
       return(
-      <div className="form-check">
-        <label key={index} className="form-check-label">
+      <div key={index} className="form-check">
+        <label  className="form-check-label">
           <input type="checkbox" name={name} id={name}
           className="form-check-input" />
           <span className="mx-2">{item.name}</span>
