@@ -100,7 +100,7 @@ console.log(item)
         <hr className="my-2"/>
         <label>Category :</label>
         <select id="category_id" name="category_id"
-          className="form-control mt-2" >
+          className="form-select mt-2" >
           <option value="0">Select please</option>
           {category.map((item, index) => {
 //            console.log(item.name)
@@ -117,13 +117,14 @@ console.log(item)
     return tags.map((item, index) => {
 // console.log(item )
       var name = "check_" + item.id
-      // form-control
       return(
-        <label key={index} className="">
+      <div className="form-check">
+        <label key={index} className="form-check-label">
           <input type="checkbox" name={name} id={name}
-           className="" />
+          className="form-check-input" />
           <span className="mx-2">{item.name}</span>
         </label>           
+      </div>
       )
     })    
   }  

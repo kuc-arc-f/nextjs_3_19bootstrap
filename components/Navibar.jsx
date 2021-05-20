@@ -43,6 +43,16 @@ export default function Page(){
           </li>
         </ul>
         <ul className="navbar-nav mb-2 mb-lg-0">
+          <li className="nav-item dropdown">
+            <a className="nav-link active dropdown-toggle nav-icon-face" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i className="bi bi-emoji-neutral rounded-circle"></i>
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="/">action1</a></li>
+              <li><a className="dropdown-item" href="/">action2</a></li>
+            </ul>
+          </li>          
+
           <li className="nav-item">
             <a className="nav-link active" href="#" data-bs-toggle="modal"
              data-bs-target="#NavigateAboutModal">About
@@ -53,6 +63,8 @@ export default function Page(){
     </div>
     <style>{`
     .navbar{ background: #E0F2F1;}
+    .nav-icon-face{font-size: 1.4rem;}
+    .nav-icon-img{ width : 32px;}
     `}</style> 
   </nav>
   )
