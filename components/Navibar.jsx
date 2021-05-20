@@ -26,6 +26,15 @@ export default function Page(){
               <li><a className="dropdown-item" href="/task_card_flex">taskCardFlex</a></li>
             </ul>
           </li>           
+          <li className="nav-item dropdown">
+            <a className="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Master
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="/category">BookCategory</a></li>
+              <li><a className="dropdown-item" href="/tags">BookTags</a></li>
+            </ul>
+          </li>           
           <li className="nav-item">
             <a className="nav-link active" href="/tasks">Tasks</a>
           </li>

@@ -100,7 +100,7 @@ console.log(item)
         <hr className="my-2"/>
         <label>Category :</label>
         <select id="category_id" name="category_id"
-          className="block w-full mt-1 py-2 rounded">
+          className="form-control mt-2" >
           <option value="0">Select please</option>
           {category.map((item, index) => {
 //            console.log(item.name)
@@ -117,11 +117,12 @@ console.log(item)
     return tags.map((item, index) => {
 // console.log(item )
       var name = "check_" + item.id
+      // form-control
       return(
-        <label key={index} className="inline-flex items-center">
+        <label key={index} className="">
           <input type="checkbox" name={name} id={name}
-           className="rounded-full mx-1 text-cyan-600 focus:outline-none" />
-          <span className="mr-2">{item.name}</span>
+           className="" />
+          <span className="mx-2">{item.name}</span>
         </label>           
       )
     })    
@@ -129,37 +130,45 @@ console.log(item)
   render() {
     return (
     <Layout>
-      <div className="container mx-auto px-5 py-2 my-2">      
+      <div className="container my-2">     
         <Link href="/books">
           <a className="btn btn-outline-primary mb-2">Back</a>
         </Link>
-        <div className="w-full max-w-md p-4 my-4 bg-blue-100 rounded-lg shadow-lg">
-          <form action="/api/content/new" method="post" id="myForm" name="myForm">
-            <h1 className="text-5xl font-bold">Books - Create</h1>
-            {this.tabCategory()}
-            <hr className="my-2" />          
-            <label>Title:</label>
-            <input type="text" className="input_text_gray my-2"
-            onChange={this.handleChangeTitle.bind(this)} />
-            <hr className="my-2" />
-            <label>Content:</label>
-            <textarea type="text" onChange={this.handleChangeContent.bind(this)}
-            className="input_text_gray my-2" rows="6"></textarea> 
-            <hr className="my-2" />
-            <label>Price:</label>
-            <input type="number" className="input_text_gray my-2"
-            onChange={this.handleChangePrice.bind(this)} />
-            <hr className="my-2" />
-            <label>Pub date:</label>
-            <input className="input_date_gray my-2"
-              name="pub_date" id="pub_date" type="date" required />          
-            <hr className="my-2" />
-            <label>Tag :</label>
-            {this.checkRow()} 
-          </form>
-          <hr className="my-4" /> 
-          <button className="btn btn-primary" onClick={this.handleClick}>Create
-          </button>        
+        <div className="card w-75 shadow-sm p-4 my-2">
+          <div className="card-body">
+            <form action="/api/content/new" method="post" id="myForm" name="myForm">
+              <h1 className="text-5xl font-bold">Books - Create</h1>
+              {this.tabCategory()}
+              <div className="form-group mt-2">
+                <label>Title:</label>
+                <input type="text" className="form-control mt-2"
+                onChange={this.handleChangeTitle.bind(this)} />
+              </div>
+              <div className="form-group mt-2">
+                <label>Content:</label>
+                <textarea type="text" onChange={this.handleChangeContent.bind(this)}
+                className="form-control mt-2" rows="6"></textarea> 
+              </div>
+              <div className="form-group mt-2">
+                <label>Price / JPY :</label>
+                <input type="number" className="form-control my-2"
+                onChange={this.handleChangePrice.bind(this)} />
+              </div>
+              <div className="form-group mt-2">
+                <label>Pub date:</label>
+                <input className="form-control my-2"
+                  name="pub_date" id="pub_date" type="date" required />          
+              </div>
+              <div className="form-group mt-2">
+                <label>Tag : </label><br />
+                {this.checkRow()} 
+              </div>
+            </form>
+            <hr className="my-4" /> 
+            <button className="btn btn-primary" onClick={this.handleClick}>Create
+            </button>        
+
+          </div>
         </div>
       </div>
     </Layout>

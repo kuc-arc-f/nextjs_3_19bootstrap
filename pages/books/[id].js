@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
 import Link from 'next/link';
+import Router from 'next/router'
+import flash from 'next-flash';
 import Dexie from 'dexie';
 
 import Layout from '../../components/layout'
@@ -23,7 +25,7 @@ export default class extends React.Component {
     super(props)
     this.state = { item: {} , tags: [] }
     this.id  = parseInt(this.props.id)
-  //console.log(props )
+//console.log(props )
   }
   componentDidMount(){
     var config = LibTask.get_const()
@@ -44,7 +46,18 @@ console.log(item)
     } catch (err) {
         console.log(err);
     }
-  }      
+  }
+  async handleClickDelete(){
+console.log("#deete-id:" , this.props.id)
+//console.log(this.props )
+    try {
+      await this.db.books.delete(parseInt(this.props.id) );
+      flash.set({ messages_success: 'Success , delete item' })
+      Router.push('/books');
+    } catch (error) {
+      console.error(error);
+    } 
+  }        
   render(){
     var tags = this.state.tags
     var item = this.state.item
@@ -53,37 +66,40 @@ console.log(item)
       categoryName = item.category.name
     }
     return (
-    <div className="bg-gray-100">
     <Layout>
-      <div className="container mx-auto px-5 py-5">
+      <div className="container py-2">
         <Link href="/books">
           <a className="btn btn-outline-primary my-2">Back</a></Link>
-        <hr className="my-2"/>
-        <div className="show_title_wrap pb-2 px-4 bg-white shadow-lg rounded-lg">
-          <h1 className="text-gray-900 font-bold text-5xl my-4 mx-2 p-2">
-            {item.title}
-          </h1>
-          <hr className="my-2" />
-          ID : {this.id} <br />
-          Category : {categoryName}
-          <hr className="my-2"/>          
-          Tag : 
-          <pre className="pre_text">
-          {tags.map((item, index) => {
-    //console.log(item)
-            return (<span key={index}> #{item.name}</span>)
-          })}      
-          </pre>
-          <hr className="my-2"/>
-          <div>Content:  {item.content}
+        <div className="card shadow-sm my-2">
+          <div className="card-body">
+            <h1 className="mx-2">{item.title}</h1>
+            ID : {this.id} <br />
+            <hr className="my-2" />
+            Category : {categoryName}
+            <hr className="my-2"/>          
+            Tag : 
+            {tags.map((item, index) => {
+      //console.log(item)
+              return (<span key={index}> #{item.name}</span>)
+            })}      
+            <hr className="my-2"/>
+            <div>Content: 
+              <pre>{item.content}</pre> 
+            </div>
+            <hr className="my-2"/>
+            Pub date : {item.pub_date}  
+            <hr className="my-2"/>
+            Price: {item.price} JPY
+            <hr className="my-2"/>
+            <div className="form-group my-2">
+              <button className="btn btn-danger" 
+                onClick={this.handleClickDelete.bind(this)}>Delete
+              </button>
+            </div>
           </div>
-          <hr className="my-2"/>
-          Pub date : {item.pub_date}      
         </div>
-        <hr />
       </div>
     </Layout>
-    </div>
     )
   }
 }
