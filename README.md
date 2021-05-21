@@ -1,12 +1,16 @@
 ﻿# nextjs_3_19bootstrap
 
- Version: 0.9.2
+ Version: 0.9.4
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
  date    : 2021/05/15
 
- update  : 2021/05/20 
+ update  : 2021/05/21
+
+***
+## License
+Licence : GPL v2.0
 
 ***
 ### Summary

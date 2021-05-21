@@ -15,7 +15,7 @@ export default function Page(){
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">Home</a>
+            <a className="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
