@@ -48,7 +48,7 @@ export default class extends Component {
       <Layout>
         <div className="container">
           <Link href="/tasks">
-            <a className="btn btn-outline-primary mt-2">Back</a>
+            <a className="btn btn-outline-dark mt-2">Back</a>
           </Link>                   
           <div className="card w-75 shadow-sm my-2">
             <div className="card-body">
@@ -64,7 +64,7 @@ export default class extends Component {
                   onChange={this.handleChangeContent.bind(this)}/>
               </div>
               <div className="form-group mt-4">
-                <button className="btn btn-primary" onClick={this.handleClick}>Create
+                <button className="btn btn-secondary btnx-orange" onClick={this.handleClick}>Create
                 </button>
               </div>                
 

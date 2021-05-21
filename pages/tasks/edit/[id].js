@@ -83,7 +83,7 @@ console.log(ctx.query.id)
     <Layout>
       <div className="container">
         <Link href="/tasks">
-          <a className="btn btn-outline-primary mt-2">Back</a>
+          <a className="btn btn-outline-dark mt-2">Back</a>
         </Link>
         <div className="card w-75 shadow-sm my-2">
           <div className="card-body">
@@ -101,12 +101,12 @@ console.log(ctx.query.id)
                 onChange={this.handleChangeContent.bind(this)}/>
             </div>
             <div className="form-group">
-              <button className="btn btn-primary" onClick={this.handleClick}>Save
+              <button className="btn btn-secondary btnx-orange" onClick={this.handleClick}>Save
               </button>
             </div>
             <hr />
             <div className="form-group">
-              <button className="btn btn-danger" onClick={this.handleClickDelete}>Delete
+              <button className="btn btn-outline-danger" onClick={this.handleClickDelete}>Delete
               </button>
             </div>
           </div>

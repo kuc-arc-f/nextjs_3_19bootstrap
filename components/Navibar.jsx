@@ -4,8 +4,9 @@ import Head from 'next/head';
 export default function Page(){
   var name  = process.env.MY_SITE_NAME;
 //console.log(d)
+// navbar-light
   return (
-  <nav className="navbar navbar-expand-md navbar-light" >
+  <nav className="navbar navbar-expand-md navbar-dark myblog_bgcolor_sub" >
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{name}</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -62,7 +63,6 @@ export default function Page(){
       </div>
     </div>
     <style>{`
-    .navbar{ background: #E0F2F1;}
     .nav-icon-face{font-size: 1.4rem;}
     .nav-icon-img{ width : 32px;}
     `}</style> 

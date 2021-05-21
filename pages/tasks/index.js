@@ -74,18 +74,18 @@ export default class Page extends React.Component {
         <div className="row">
           <div className="col-sm-6">
             <Link href="/tasks/create">
-              <a className="btn btn-primary mt-0">New</a>
+              <a className="btn btn-secondary btnx-orange mt-0">New</a>
             </Link>          
           </div>
           <div className="col-sm-6">
-            <a className="btn btn-sm btn-outline-primary mt-0 mr-2"
+            <a className="btn btn-sm btn-outline-dark mt-0 mr-2"
              id="download" download="tasks.json"
               onClick={this.handleClickExport}>
               Export
             </a>
             &nbsp;
             <Link href="/tasks/import">
-                <a className="btn btn-sm btn-primary ml-2" target="_blank">Import</a>
+                <a className="btn btn-sm btn-secondary btnx-orange ml-2" target="_blank">Import</a>
             </Link>            
           </div>          
         </div>

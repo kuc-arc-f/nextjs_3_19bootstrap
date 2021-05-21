@@ -133,7 +133,7 @@ console.log(item)
     <Layout>
       <div className="container my-2">     
         <Link href="/books">
-          <a className="btn btn-outline-primary mb-2">Back</a>
+          <a className="btn btn-outline-dark mb-2">Back</a>
         </Link>
         <div className="card w-75 shadow-sm p-4 my-2">
           <div className="card-body">
@@ -166,7 +166,7 @@ console.log(item)
               </div>
             </form>
             <hr className="my-4" /> 
-            <button className="btn btn-primary" onClick={this.handleClick}>Create
+            <button className="btn btn-secondary btnx-orange" onClick={this.handleClick}>Create
             </button>        
 
           </div>

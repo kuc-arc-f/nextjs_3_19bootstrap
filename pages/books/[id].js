@@ -69,7 +69,7 @@ console.log("#deete-id:" , this.props.id)
     <Layout>
       <div className="container py-2">
         <Link href="/books">
-          <a className="btn btn-outline-primary my-2">Back</a></Link>
+          <a className="btn btn-outline-dark my-2">Back</a></Link>
         <div className="card shadow-sm my-2">
           <div className="card-body">
             <h1 className="mx-2">{item.title}</h1>

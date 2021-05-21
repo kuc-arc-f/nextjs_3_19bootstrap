@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-  <footer className="footer_box">
+  <footer className="footer_box myblog_bgcolor_main">
     <div className="container">
       <div className="py-28 flex flex-col lg:flex-row text-white">
         about:<br />
@@ -12,7 +12,6 @@ export default function Footer() {
     <style>{`
     .footer_box {
       margin-top: 80px;
-      background-color: #757575;
       color: #fff;
       padding: 140px 40px;
     }    
