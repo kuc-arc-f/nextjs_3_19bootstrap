@@ -40,3 +40,25 @@
 .btnx-lime-light{
  color: #827717 ;background: #C5E1A5; border: 2px solid #C5E1A5;         
 }
+/* outline */
+.btnx--outline-indigo{
+  color: var(--bs-indigo); background:var(--bs-white); border: 2px solid #9FA8DA; 
+}
+.btnx-outline-purpule{
+ color: var(--bs-purple); background:var(--bs-white); border: 2px solid #CE93D8; 
+}
+.btnx-outline-pink{
+ color: var(--bs-pink); background:var(--bs-white); border: 2px solid #F48FB1;         
+}
+.btnx-outline-orange{
+ color: var(--bs-orange); background:var(--bs-white); border: 2px solid #FFCC80;         
+}
+.btnx-outline-teal{
+ color: #004D40; background:var(--bs-white); border: 2px solid #80CBC4;         
+}
+.btnx-outline-cyan{
+ color: #006064; background:var(--bs-white); border: 2px solid #80DEEA;         
+}
+.btnx-outline-lime{
+ color: #827717; background:var(--bs-white); border: 2px solid #C5E1A5;         
+}

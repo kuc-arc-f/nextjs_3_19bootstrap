@@ -48,7 +48,7 @@ export default class extends Component {
       <Layout>
         <div className="container">
           <Link href="/tasks">
-            <a className="btn btn-outline-dark mt-2">Back</a>
+            <a className="btn btn-light btnx-outline-orange mt-2">Back</a>
           </Link>                   
           <div className="card w-75 shadow-sm my-2">
             <div className="card-body">

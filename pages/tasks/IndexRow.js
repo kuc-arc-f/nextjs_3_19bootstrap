@@ -11,7 +11,7 @@ const IndexRow = props => (
     </td>
     <td>
     <Link href={`/tasks/edit/${props.id}`}>
-      <a className="btn btn-sm btn-outline-dark">Edit</a>
+      <a className="btn btn-sm btn-light btnx-outline-orange">Edit</a>
     </Link>    
     </td>
   </tr>

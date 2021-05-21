@@ -78,7 +78,7 @@ export default class Page extends React.Component {
             </Link>          
           </div>
           <div className="col-sm-6">
-            <a className="btn btn-sm btn-outline-dark mt-0 mr-2"
+            <a className="btn btn-sm btn btn-light btnx-outline-orange mr-2"
              id="download" download="tasks.json"
               onClick={this.handleClickExport}>
               Export

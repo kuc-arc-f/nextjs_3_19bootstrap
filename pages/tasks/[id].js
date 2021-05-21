@@ -44,7 +44,7 @@ console.log(this.id )
     <Layout>
       <div className="container p-4">
         <Link href="/tasks">
-          <a className="btn btn-outline-dark mt-0">Back</a>
+          <a className="btn btn-light btnx-outline-orange mt-0">Back</a>
         </Link>          
         <div className="card shadow-sm my-2">
           <div className="card-body">

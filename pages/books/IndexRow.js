@@ -13,7 +13,7 @@ const IndexRow = props => (
     </td>
     <td className="p-2">
     <Link href={`/books/${props.id}`}>
-        <a className="btn btn-sm btn-outline-dark"> Show</a>
+        <a className="btn btn-sm btn-light btnx-outline-orange"> Show</a>
       </Link>
     </td>
   </tr>
